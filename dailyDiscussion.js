@@ -269,7 +269,7 @@ async function startThread() {
                             let detailsIndex = body2.findIndex(e => e.includes('class="detailsStatsContainerRight"'));
                             let date = body2[detailsIndex+2].slice(body2[detailsIndex+2].indexOf('">')+2, body2[detailsIndex+2].indexOf(' @ '));
                             let tags = Array.from(doc2.querySelectorAll('.col_right > .rightDetailsBlock a')).filter(a => !a.parentElement.classList.contains('change_note_link')).map(a => a.textContent);
-                            description = `[Open in Steam](${cfg.exportURL}/redirect/${encodeURIComponent(`steam://url/CommunityFilePage/${url.slice(url.indexOf('=')+1, url.indexOf('&'))})`)}${tags.length > 0 ? `\n**Tags**: ${tags.join(', ')}` : ''}`;
+                            description = `[Open in Steam](${cfg.exportURL}/redirect/${encodeURIComponent(`steam://url/CommunityFilePage/${url.slice(url.indexOf('=')+1)})`)}${tags.length > 0 ? `\n**Tags**: ${tags.join(', ')}` : ''}`;
                             let itemDesc = doc2.querySelector('.workshopItemDescription').textContent.replaceAll('\n', ' ');
                             if (itemDesc.length > 200)
                                 itemDesc = itemDesc.slice(0, 200) + "...";
