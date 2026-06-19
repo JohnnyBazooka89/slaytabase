@@ -270,6 +270,66 @@ async function wikiSearch(githubUrl, arg) {
     }
 }
 
+async function workshopSearch(appid, msg, arg) {
+    let response = await fetch(`https://steamcommunity.com/workshop/browse/?appid=${appid}&browsesort=textsearch&num_per_page=10&searchtext=${arg.replaceAll(' ', '+')}`);
+    let body = await response.text();
+    if (body.includes('class="tmIrUKf-Mh8-')) {
+        let dom = new JSDOM(body);
+        let doc = dom.window.document;
+        let results = Array.from(doc.getElementsByClassName("tmIrUKf-Mh8-"));
+        if (results.length <= 0) return { title: "not found" };
+        let el = results[0];
+        let url = el.querySelector('._3rvey4VpXts-').firstChild.href;
+        let name = el.querySelector('._3rvey4VpXts-').firstChild.innerHTML;
+        let img = el.querySelector('.rKsVnKsUFJQ-').firstChild.src;
+        let author = {};
+        let description;
+        let response2 = await fetch(url);
+        let body2 = await response2.text();
+        if (body2.includes('class="stats_table"')) {
+            body2 = body2.split('\n');
+            let authorLine = body2.find(e => e.includes('s Workshop'));
+            author.name = `${authorLine.slice(authorLine.indexOf('0">')+3, authorLine.indexOf('s Workshop')-1)}'s Workshop`;
+            author.url = authorLine.slice(authorLine.indexOf("href=")+6, authorLine.indexOf('0">')+1);
+            let response3 = await fetch(author.url);
+            let body3 = await response3.text();
+            if (body3.includes('playerAvatar medium')) {
+                body3 = body3.split('\n');
+                let avatarIndex = body3.findIndex(e => e.includes('playerAvatar medium'));
+                let avatarLine = body3[avatarIndex+(body3[avatarIndex+1].includes('profile_avatar_frame') ? 10 : 3)];
+                author.iconURL = avatarLine.slice(avatarLine.indexOf('srcset=')+8, avatarLine.indexOf('" />')-2);
+            }
+            let tableIndex = body2.findIndex(e => e.includes('class="stats_table"'));
+            let subs = body2[tableIndex+6].slice(body2[tableIndex+6].indexOf('<td>')+4, body2[tableIndex+6].indexOf('</td>'));
+            let detailsIndex = body2.findIndex(e => e.includes('class="detailsStatsContainerRight"'));
+            let date = body2[detailsIndex+2].slice(body2[detailsIndex+2].indexOf('">')+2, body2[detailsIndex+2].indexOf(' @ '));
+            description = `[Open in Steam](${cfg.exportURL}/redirect/${encodeURIComponent(`steam://url/CommunityFilePage/${url.slice(url.indexOf('=')+1, url.indexOf('&'))})`)}\n${subs} Subscribers / Posted ${date}`;
+            let commentIndex = body2.findIndex(e => e.includes('commentthread'));
+            if (commentIndex != -1) body2 = body2.slice(0, commentIndex);
+            let githubLine = body2.find(e => e.includes('/linkfilter/?url=https://github.com'));
+            if (githubLine != undefined) {
+                githubLine = githubLine.slice(githubLine.indexOf('/linkfilter/?url=https://github.com')+17);
+                description += ` / [GitHub](${githubLine.slice(0, githubLine.indexOf('"'))})`;
+            } else {
+                githubLine = body2.find(e => e.includes('/linkfilter/?url=http://github.com'));
+                if (githubLine != undefined) {
+                    githubLine = githubLine.slice(githubLine.indexOf('/linkfilter/?url=http://github.com')+17);
+                    description += ` / [GitHub](${githubLine.slice(0, githubLine.indexOf('"'))})`;
+                }
+            }
+        }
+        return {
+            title: name,
+            url,
+            author,
+            description,
+            color: 1779768,
+            thumbnail: {url: img},
+        };
+        return { title: "wip" };
+    } else return {title: `no mod found under ${arg}`};
+}
+
 const commands =  {
     exact: {
         'help': () => ({
@@ -326,7 +386,7 @@ __Commands:__
 - page=? - specify result page
 <show10 [search query]> shows the full item details for the first 10 results for a search query
 <count?[search query]> shows the total number of results for a search query (more helpful with filters!)
-<ws?[mod]> - searches for a slay the spire mod on the steam workshop
+<ws?[mod]> or <ws2?[mod]> - searches for a slay the spire mod on the steam workshop
 <mtsbot?[item]> - searches ModTheSpire Bot's data for an item. has a different search, type <mtsbot?> for help
 <memes> help with the bot's meme generator
 <artpreview [card name]> takes your first attachment and uses it as card art for a card
@@ -340,7 +400,7 @@ __Commands:__
 <plot [equation] [args]> - type <plot help> for more information
 <feedback?[message]> sends a message to a channel seen only by the bot author
 <lists> links to the bot's data
-<wiki?[search]> searches certain modding-related github repos for wiki pages
+<wiki?[search]> or <wiki2?[search]> or <baselib?[search]> searches certain modding-related github repos for wiki pages
 <mtg?[card]> searches scryfall for a card from magic the gathering
 `,
 //<remindme [time]> links you to a message in a certain amount of time (e.g. 10m, 5h, 30d)
@@ -1460,69 +1520,10 @@ __List of memes:__
             };
         },
 
-        'ws?': async (msg, arg) => {
-            let response = await fetch(`https://steamcommunity.com/workshop/browse/?appid=646570&browsesort=textsearch&num_per_page=10&searchtext=${arg.replaceAll(' ', '+')}`);
-            let body = await response.text();
-            if (body.includes('class="tmIrUKf-Mh8-')) {
-                let dom = new JSDOM(body);
-                let doc = dom.window.document;
-                let results = Array.from(doc.getElementsByClassName("tmIrUKf-Mh8-"));
-                if (results.length <= 0) return { title: "not found" };
-                let el = results[0];
-                let url = el.querySelector('._3rvey4VpXts-').firstChild.href;
-                let name = el.querySelector('._3rvey4VpXts-').firstChild.innerHTML;
-                let img = el.querySelector('.rKsVnKsUFJQ-').firstChild.src;
-                let author = {};
-                let description;
-                let response2 = await fetch(url);
-                let body2 = await response2.text();
-                if (body2.includes('class="stats_table"')) {
-                    body2 = body2.split('\n');
-                    let authorLine = body2.find(e => e.includes('s Workshop'));
-                    author.name = `${authorLine.slice(authorLine.indexOf('0">')+3, authorLine.indexOf('s Workshop')-1)}'s Workshop`;
-                    author.url = authorLine.slice(authorLine.indexOf("href=")+6, authorLine.indexOf('0">')+1);
-                    let response3 = await fetch(author.url);
-                    let body3 = await response3.text();
-                    if (body3.includes('playerAvatar medium')) {
-                        body3 = body3.split('\n');
-                        let avatarIndex = body3.findIndex(e => e.includes('playerAvatar medium'));
-                        let avatarLine = body3[avatarIndex+(body3[avatarIndex+1].includes('profile_avatar_frame') ? 10 : 3)];
-                        author.iconURL = avatarLine.slice(avatarLine.indexOf('srcset=')+8, avatarLine.indexOf('" />')-2);
-                    }
-                    let tableIndex = body2.findIndex(e => e.includes('class="stats_table"'));
-                    let subs = body2[tableIndex+6].slice(body2[tableIndex+6].indexOf('<td>')+4, body2[tableIndex+6].indexOf('</td>'));
-                    let detailsIndex = body2.findIndex(e => e.includes('class="detailsStatsContainerRight"'));
-                    let date = body2[detailsIndex+2].slice(body2[detailsIndex+2].indexOf('">')+2, body2[detailsIndex+2].indexOf(' @ '));
-                    description = `[Open in Steam](${cfg.exportURL}/redirect/${encodeURIComponent(`steam://url/CommunityFilePage/${url.slice(url.indexOf('=')+1, url.indexOf('&'))})`)}\n${subs} Subscribers / Posted ${date}`;
-                    let commentIndex = body2.findIndex(e => e.includes('commentthread'));
-                    if (commentIndex != -1) body2 = body2.slice(0, commentIndex);
-                    let githubLine = body2.find(e => e.includes('/linkfilter/?url=https://github.com'));
-                    if (githubLine != undefined) {
-                        githubLine = githubLine.slice(githubLine.indexOf('/linkfilter/?url=https://github.com')+17);
-                        description += ` / [GitHub](${githubLine.slice(0, githubLine.indexOf('"'))})`;
-                    } else {
-                        githubLine = body2.find(e => e.includes('/linkfilter/?url=http://github.com'));
-                        if (githubLine != undefined) {
-                            githubLine = githubLine.slice(githubLine.indexOf('/linkfilter/?url=http://github.com')+17);
-                            description += ` / [GitHub](${githubLine.slice(0, githubLine.indexOf('"'))})`;
-                        }
-                    }
-                }
-                return {
-                    title: name,
-                    url,
-                    author,
-                    description,
-                    color: 1779768,
-                    thumbnail: {url: img},
-                };
-                return { title: "wip" };
-            } else return {title: `no mod found under ${arg}`};
-        },
-
-        'workshop?': async (msg, arg) => {
-            return await commands.prefix['ws?'](msg, arg);
-        },
+        'ws?': async (msg, arg) => await workshopSearch("646570", msg, arg),
+        'workshop?': async (msg, arg) => await workshopSearch("646570", msg, arg),
+        'ws2?': async (msg, arg) => await workshopSearch("2868840", msg, arg),
+        'workshop2?': async (msg, arg) => await workshopSearch("2868840", msg, arg),
 
         'google?': async (msg, _, __, oa) => {
             try {
