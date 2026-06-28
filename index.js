@@ -368,7 +368,8 @@ const emojiReactions = {
     '🐸': ['frog', 'ribbit'],
     '🦦': ['otter', 'water'],
     '🦋': ['butterfly', 'moth'],
-    '🐴': ['horse', 'pony', 'course', 'hoarse'],
+    '🐴': ['horse', 'pony', 'course', 'hoarse', 'mare', 'twilight', 'dash'],
+    '✨': ['sparkle', 'glimmer', 'twilight', 'star'],
     '🥭': ['mango', 'among', 'sus'], // sus as well, just for fun :3
 };
 
