@@ -224,10 +224,10 @@ async function startThread() {
             if (cfg[workshop.cfgKey] != null) {
                 let response = await fetch('https://steamcommunity.com/workshop/browse/?appid='+workshop.id+'&browsesort=mostrecent&actualsort=mostrecent&p=1&numperpage=10');
                 let body = await response.text();
-                if (body.includes('class="tmIrUKf-Mh8-')) {
+                if (body.includes('class="UNowfeldbNg-')) {
                     let dom = new JSDOM(body);
                     let doc = dom.window.document;
-                    let results = Array.from(doc.getElementsByClassName("tmIrUKf-Mh8-")).slice(0, 10);
+                    let results = Array.from(doc.getElementsByClassName("UNowfeldbNg-")).slice(0, 10);
                     results.forEach(r => {
                         r.wsID = r.querySelector("a").href.slice('https://steamcommunity.com/sharedfiles/filedetails/?id='.length);
                     });
@@ -242,9 +242,9 @@ async function startThread() {
                     for (let i = 0; i < Math.min(results.length, 10); i++) {
                         let el = results[i];
                         let embed = embeds[i];
-                        let url = el.querySelector('._3rvey4VpXts-').firstChild.href;
-                        let name = el.querySelector('._3rvey4VpXts-').firstChild.innerHTML;
-                        let img = el.querySelector('.rKsVnKsUFJQ-').firstChild.src;
+                        let url = el.querySelector('.Sw3NXcvOA4Y-').firstChild.href;
+                        let name = el.querySelector('.Sw3NXcvOA4Y-').firstChild.innerHTML;
+                        let img = el.querySelector('.tK5agp5sRy8-').firstChild.src;
                         let author = {};
                         let description;
                         let response2 = await fetch(url);

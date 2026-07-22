@@ -273,15 +273,15 @@ async function wikiSearch(githubUrl, arg) {
 async function workshopSearch(appid, msg, arg) {
     let response = await fetch(`https://steamcommunity.com/workshop/browse/?appid=${appid}&browsesort=textsearch&num_per_page=10&searchtext=${arg.replaceAll(' ', '+')}`);
     let body = await response.text();
-    if (body.includes('class="tmIrUKf-Mh8-')) {
+    if (body.includes('class="UNowfeldbNg-')) {
         let dom = new JSDOM(body);
         let doc = dom.window.document;
-        let results = Array.from(doc.getElementsByClassName("tmIrUKf-Mh8-"));
+        let results = Array.from(doc.getElementsByClassName("UNowfeldbNg-"));
         if (results.length <= 0) return { title: "not found" };
         let el = results[0];
-        let url = el.querySelector('._3rvey4VpXts-').firstChild.href;
-        let name = el.querySelector('._3rvey4VpXts-').firstChild.innerHTML;
-        let img = el.querySelector('.rKsVnKsUFJQ-').firstChild.src;
+        let url = el.querySelector('.Sw3NXcvOA4Y-').firstChild.href;
+        let name = el.querySelector('.Sw3NXcvOA4Y-').firstChild.innerHTML;
+        let img = el.querySelector('.tK5agp5sRy8-').firstChild.src;
         let author = {};
         let description;
         let response2 = await fetch(url);
