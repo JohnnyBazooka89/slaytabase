@@ -291,7 +291,8 @@ async function startThread() {
                         }
                         embed.title = name;
                         embed.url = url;
-                        embed.thumbnail = {url: img};
+                        if (img.startsWith("https://"))
+                            embed.thumbnail = {url: img};
                         embed.author = author;
                         embed.description = description;
                     }

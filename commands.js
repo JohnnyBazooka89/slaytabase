@@ -318,7 +318,7 @@ async function workshopSearch(appid, msg, arg) {
                 }
             }
         }
-        return {
+        let embed = {
             title: name,
             url,
             author,
@@ -326,7 +326,9 @@ async function workshopSearch(appid, msg, arg) {
             color: 1779768,
             thumbnail: {url: img},
         };
-        return { title: "wip" };
+        if (!img.startsWith("https://"))
+            delete embed.thumbnail;
+        return embed;
     } else return {title: `no mod found under ${arg}`};
 }
 
