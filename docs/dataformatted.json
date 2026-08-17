@@ -1073,6 +1073,17 @@
             "mod": "Hades Ancients"
         },
         {
+            "id": "HADESANCIENTS-SHIFTING_FORM",
+            "name": "Shifting Form",
+            "color": "event",
+            "rarity": "Token",
+            "type": "Power",
+            "cost": "3",
+            "description": "Play Demon Form, (+,) Serpent Form, (+,) Void Form, (+,) Reaper Form, (+,) or Echo Form (+) at random.",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
             "id": "MNEMONIST-ALTERNATE_LIVES",
             "name": "Alternate Lives",
             "color": "card_pool∴mnemonist-mnemonist_card_pool",
@@ -148756,6 +148767,17 @@
             "mod": "Hades Ancients"
         },
         {
+            "id": "HADESANCIENTS-BLOOD_SPREE",
+            "name": "Blood Spree",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Upon pickup, obtain Charon's Obol. When you encounter the Merchant, gain 400 Gold and lose 4 Max HP.",
+            "flavorText": "\"A sacrifice in blood is fully paid, and we are squared away.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
             "id": "HADESANCIENTS-BOTTOMLESS_DRINK",
             "name": "Bottomless Drink",
             "pool": "colorless",
@@ -148849,7 +148871,7 @@
             "pool": "colorless",
             "ancient": "Athena",
             "tier": "Ancient",
-            "description": "The first time you are hit by an enemy each combat, prevent that damage and become immune to enemy damage until the start of your next turn.",
+            "description": "The first time you would receive unblocked attack damage, prevent that damage and become immune to enemy damage until the start of your next turn.",
             "flavorText": "\"Hold fast, Cousin!\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -148970,7 +148992,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "The first time each combat you play a card that costs [E][E] or more, ALL enemies lose 3 Strength this turn.",
+            "description": "The first time each combat you play a card that costs [E][E] or more, ALL enemies lose 4 Strength this turn.",
             "flavorText": "The inevitable cannot be prevented, though perhaps can be forestalled.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -148981,7 +149003,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "Every 3 combats, your card rewards gain an additional Rare card.",
+            "description": "Every 3 normal combats, your card rewards gain an additional Rare card.",
             "flavorText": "Not even gods can live to their fullest purpose; yet mortals all must strive.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149014,7 +149036,7 @@
             "pool": "colorless",
             "ancient": "Hephaestus",
             "tier": "Ancient",
-            "description": "At the start of your turn, apply 8 Blast and 1 Vulnerable to the enemy with the lowest HP.",
+            "description": "At the start of each turn, apply 6 Blast to the enemy with the lowest HP and increase this amount by 1 for this combat.",
             "flavorText": "\"Don't like what I see, down comes my hammer just like that!\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149036,8 +149058,30 @@
             "pool": "colorless",
             "ancient": "Hephaestus",
             "tier": "Ancient",
-            "description": "At the start of each combat, apply 24 Blast to ALL enemies.",
+            "description": "Every 3 turns, deal 30 damage to ALL enemies.",
             "flavorText": "\"Was as close as I am liable to get to blowing up. Still working at it, mind!\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-GRIEVOUS_BLOW",
+            "name": "Grievous Blow",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Every 3rd Attack you play deals double damage.",
+            "flavorText": "\"I shall empower you to acts of greater violence than before.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-GRISLY_GAIN",
+            "name": "Grisly Gain",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Every 4th Attack you play from your Hand is free.",
+            "flavorText": "\"Perhaps my blessing shall let you deliver death still more efficiently.\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149069,7 +149113,7 @@
             "pool": "colorless",
             "ancient": "Aphrodite",
             "tier": "Ancient",
-            "description": "Your Attacks deal 10% more damage for each Weak on the enemy and apply 1 Weak on every hit.",
+            "description": "Your Attacks deal 5% more damage for each Weak on the enemy and apply 1 Weak on every hit.",
             "flavorText": "\"At this rate, you'll end up breaking more hearts than me!\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149080,7 +149124,7 @@
             "pool": "colorless",
             "ancient": "Zeus",
             "tier": "Ancient",
-            "description": "The first 2 Skills you play each combat are played an extra time.",
+            "description": "The first 3 Skills you play from your Hand each combat are played an additional time.",
             "flavorText": "\"You witches have a natural spark in you, I know, but here! I've got another.\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149091,7 +149135,7 @@
             "pool": "colorless",
             "ancient": "Zeus",
             "tier": "Ancient",
-            "description": "Whenever you deal unblocked attack damage, apply Blitz.",
+            "description": "Whenever you deal unblocked attack damage to an enemy without Blitz, apply Blitz.",
             "flavorText": "\"My lightning bolt is yours!\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149185,6 +149229,17 @@
             "mod": "Hades Ancients"
         },
         {
+            "id": "HADESANCIENTS-MEAT_GRINDER",
+            "name": "Meat Grinder",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Whenever you play a card that costs [E][E] or more, deal 8 damage to ALL enemies twice.",
+            "flavorText": "\"May you sow such destruction as to shake this mountain to its core, my kin.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
             "id": "HADESANCIENTS-MENTAL_BLOCK",
             "name": "Mental Block",
             "pool": "colorless",
@@ -149192,6 +149247,17 @@
             "tier": "Ancient",
             "description": "Start each combat with 2 Artifact. Whenever your Artifact triggers, gain 6 Block.",
             "flavorText": "\"You hide your troubles well, Melinoë.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-MUTUAL_DESTRUCTION",
+            "name": "Mutual Destruction",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Your Attacks deal 25%/50%/100% more damage, while your HP is at or below 75%/50%/25%.",
+            "flavorText": "\"You're on the verge of yet another brush with death, I see, my hell-born kin. Do send some others down with you, would you?\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149212,7 +149278,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "The 3rd Attack played each combat is played an additional time.",
+            "description": "The 3rd Attack you play from your Hand each combat is played an additional time.",
             "flavorText": "She sprang from Chaos, and formed much of the natural world, above the surface and below.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149234,7 +149300,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "Upon pickup, gain 6 Max HP. Start each Elite or Boss combat with an additional [E][E].",
+            "description": "Start each Elite or Boss combat with an additional [E][E]. At the end of each Elite or Boss combat, gain 2 Max HP.",
             "flavorText": "He stole from the gods the gift of fire, for mortals; thus he suffered, but grew strong.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149295,6 +149361,17 @@
             "mod": "Hades Ancients"
         },
         {
+            "id": "HADESANCIENTS-PROFUSE_BLEEDING",
+            "name": "Profuse Bleeding",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "At the start of each enemy's turn, it loses 5 HP for each unique debuff it has.",
+            "flavorText": "\"Perhaps the dead you stand against have long forgotten the experience of anguish and despair. I trust that you shall soon remind them for me?\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
             "id": "HADESANCIENTS-PROUD_BEARING",
             "name": "Proud Bearing",
             "pool": "colorless",
@@ -149306,13 +149383,24 @@
             "mod": "Hades Ancients"
         },
         {
+            "id": "HADESANCIENTS-RALLYING_CRY",
+            "name": "Rallying Cry",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "At the end of each Elite combat, gain 1 Glory. Start each combat with 2 Strength and 2 Thorns for each 1 Glory.",
+            "flavorText": "\"May all the death you bring become the stuff of legends told in fearful mortal whisperings around the world, my kin.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
             "id": "HADESANCIENTS-RAZOR_SHOALS",
             "name": "Razor Shoals",
             "pool": "colorless",
             "ancient": "Poseidon",
             "tier": "Ancient",
-            "description": "Choose 3 Attacks in your Deck. Enchant them with Splash 5.",
-            "flavorText": "\"Even the mortals know the sea is bountiful, yet also capable of deadly force!\"",
+            "description": "Choose 3 Attacks in your Deck. Enchant them with Splashing 5.",
+            "flavorText": "\"Come, Niece, let us crash upon our enemies as great waves upon a shore!\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149344,8 +149432,19 @@
             "pool": "colorless",
             "ancient": "Athena",
             "tier": "Ancient",
-            "description": "Every [E][E][E] you spend, deal 5 damage to a random enemy 3 times.",
+            "description": "Every [E][E][E] you spend, deal 4 damage to a random enemy 3 times.",
             "flavorText": "\"And I wouldn't advise getting run through by my spear, yet at times it must be done.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-SANGUINARY_SAVOR",
+            "name": "Sanguinary Savor",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "You can now Pay Tribute at Rest Sites.",
+            "flavorText": "\"Your sacrifice to me just now has moved me to forgiveness for the time; thus shall we call a truce.\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149422,7 +149521,7 @@
             "ancient": "Poseidon",
             "tier": "Ancient",
             "description": "Your Attacks apply 1 Froth on every hit.",
-            "flavorText": "\"You are swimming in dangerous waters with such antics, Niece.\"",
+            "flavorText": "\"Come on, Niece, let's go batter down our enemies like ships within a storm!\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149445,6 +149544,17 @@
             "tier": "Ancient",
             "description": "Upon pickup, gain 16 Max HP and 499 Gold.",
             "flavorText": "\"As long as you have love in your heart, you'll probably be fine!\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-STABBING_RUSH",
+            "name": "Stabbing Rush",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "At the start of your turn, draw 2 cards and Exhaust 2 cards from your Hand.",
+            "flavorText": "\"There are so many types of death... and yet, the sudden, violent kind is unsurpassed, I think.\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149553,7 +149663,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "Every 3 combats, gain 3 Max HP.",
+            "description": "Every 3 combats, gain 4 Max HP.",
             "flavorText": "Many of the greatest heroes mortalkind has to offer have in common his patient instructions.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149608,7 +149718,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "Your Attacks that cost 0[E] deal 2 additional damage, and you gain 2 additional Block from Skills that cost 0[E].",
+            "description": "Cards that cost 0[E] deal 2 additional damage, and give 2 additional Block.",
             "flavorText": "Through discipline and instinct comes sustaining skill both in shadow and the light of the moon.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149663,7 +149773,7 @@
             "pool": "colorless",
             "ancient": "Hecate",
             "tier": "Ancient",
-            "description": "The first time each combat you play a card that costs [E][E] or more, gain [E].",
+            "description": "The first time each combat you play a card that costs [E][E] or more, gain [E][E].",
             "flavorText": "Left to her own devices, she learned to confront the world on her own terms.",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149729,7 +149839,7 @@
             "pool": "colorless",
             "ancient": "Hephaestus",
             "tier": "Ancient",
-            "description": "At the start of your turn, gain [E] and lose 1 HP.",
+            "description": "At the start of each turn, gain [E] and lose 1 HP.",
             "flavorText": "\"So you took some hits along the way, so what? You're an extension of your weapon, witchie! And a decent one can take a lot of punishment.\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -149753,6 +149863,39 @@
             "tier": "Ancient",
             "description": "Upon pickup, gain 3 Max HP for each Upgraded or Enchanted card in your Deck. Whenever a card in your Deck becomes Upgraded or Enchanted, or such a card is added to your Deck, gain 3 Max HP.",
             "flavorText": "\"You still alive, witchie? Here, this ought to keep it that way.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-VICIOUS_FLOURISH",
+            "name": "Vicious Flourish",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Whenever you play a Skill card, apply 4 Wounds to a random enemy.",
+            "flavorText": "\"This world has a limitless capacity for pain; and so, it truly is no inconvenience to help you to bring out a little more.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-VICIOUS_STRIKE",
+            "name": "Vicious Strike",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "Upon pickup, choose 5 Attacks in your Deck. Enchant them with Wounding.",
+            "flavorText": "\"I'd like to offer you a choice amongst my most exquisite tools which inflict suffering.\"",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-VISCERAL_IMPACT",
+            "name": "Visceral Impact",
+            "pool": "colorless",
+            "ancient": "Ares",
+            "tier": "Ancient",
+            "description": "At the start of each turn, lose 1 HP. At the end of your first turn, your Form card is played for free.",
+            "flavorText": "\"So much letting of blood, so much of it, your own. Let's see to keeping you alive and in the fight a while longer, then.\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149785,7 +149928,7 @@
             "ancient": "Poseidon",
             "tier": "Ancient",
             "description": "Upon pickup, gain 2 Max HP for each relic you have, including this one. Whenever you obtain a relic, gain 2 Max HP.",
-            "flavorText": "\"Your injuries shall make you stronger, Niece!\"",
+            "flavorText": "\"Arise, my niece! As would a fierce sea-creature of some sort! One blessed by me!\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149796,7 +149939,7 @@
             "ancient": "Poseidon",
             "tier": "Ancient",
             "description": "The first time each turn you draw 2 cards during your turn, gain [E].",
-            "flavorText": "\"Oh, this is swell!\"",
+            "flavorText": "\"The tides are turning, can't you feel it, Niece? I can, of course, but surely you can, too!\"",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -149806,7 +149949,7 @@
             "pool": "colorless",
             "ancient": "Poseidon",
             "tier": "Ancient",
-            "description": "The 3rd Attack played each turn is played an additional time.",
+            "description": "The 3rd Attack you play from your Hand each turn is played an additional time.",
             "flavorText": "\"Here comes the wave!\"",
             "v": 2,
             "mod": "Hades Ancients"
@@ -198313,10 +198456,19 @@
             "mod": "Hades Ancients"
         },
         {
+            "hasIcon": false,
+            "id": "LocString with Title=static_hover_tips.HADESANCIENTS-PAY_TRIBUTE.title and Description=static_hover_tips.HADESANCIENTS-PAY_TRIBUTE.description",
+            "name": "Pay Tribute",
+            "description": "Lose {MaxHpLoss} Max HP to obtain {RelicsToObtain} relic, Upgrade {CardsToUpgrade} card, remove {CardsToRemove} card, and procure {PotionsToProcure} potion.",
+            "type": "Keyword",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
             "hasIcon": true,
             "id": "POWER.HADESANCIENTS-BLITZ_POWER",
             "name": "Blitz",
-            "description": "After this creature takes 15 more unblocked attack damage, it takes 4 damage, and the damage of all future Blitz triggers on this creature is increased by 1. Multiple instances of Blitz track damage separately.",
+            "description": "After this creature takes 15 more unblocked attack damage, it takes 8 damage, and the damage of all future Blitz triggers on this creature is increased by 4.",
             "type": "Debuff",
             "v": 2,
             "mod": "Hades Ancients"
@@ -198360,8 +198512,8 @@
         {
             "hasIcon": true,
             "id": "POWER.HADESANCIENTS-RUPTURE_POWER",
-            "name": "Rupture",
-            "description": "Ruptured creatures take damage at the start of their turn.",
+            "name": "Riptide",
+            "description": "Creatures with Riptide take damage at the start of their turn.",
             "type": "Debuff",
             "v": 2,
             "mod": "Hades Ancients"
@@ -198379,7 +198531,7 @@
             "hasIcon": true,
             "id": "POWER.HADESANCIENTS-BLAST_POWER",
             "name": "Blast",
-            "description": "Blasted creatures take damage at the end of their turn. Each turn, Blast is reduced by half.",
+            "description": "Blasted creatures take damage at the start of their turn. Each turn, Blast is reduced by half.",
             "type": "Debuff",
             "v": 2,
             "mod": "Hades Ancients"
@@ -198406,7 +198558,7 @@
             "hasIcon": true,
             "id": "POWER.HADESANCIENTS-INFATUATED_POWER",
             "name": "Infatuated",
-            "description": "Your next Attack deals 0 damage.",
+            "description": "This creature's next Attack deals 0 damage.",
             "type": "Debuff",
             "v": 2,
             "mod": "Hades Ancients"
@@ -198416,6 +198568,15 @@
             "id": "POWER.HADESANCIENTS-HANGOVER_POWER",
             "name": "Hangover",
             "description": "Hungover creatures take damage at the end of their turn. Each turn, Hangover is reduced by 1.",
+            "type": "Debuff",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "hasIcon": true,
+            "id": "POWER.HADESANCIENTS-WOUNDS_POWER",
+            "name": "Wounds",
+            "description": "Your next Attack that deals damage to the Wounded creature deals additional damage.",
             "type": "Debuff",
             "v": 2,
             "mod": "Hades Ancients"
@@ -212606,7 +212767,7 @@
         {
             "id": "BaseLib",
             "name": "BaseLib",
-            "version": "v3.4.3",
+            "version": "v3.4.5",
             "authors": [
                 "Alchyr"
             ],
@@ -212628,7 +212789,7 @@
         {
             "id": "HadesAncients",
             "name": "Hades Ancients",
-            "version": "v0.3.14",
+            "version": "v0.4.4",
             "authors": [
                 "JohnnyBazooka89"
             ],
@@ -215603,14 +215764,14 @@
         {
             "id": "HADESANCIENTS-THUNDERCALL",
             "name": "Thundercall",
-            "description": "Channel 1 Lightning.",
+            "description": "Increases Block gained from this card by 3. On play, Channel 1 Lightning.",
             "v": 2,
             "mod": "Hades Ancients"
         },
         {
             "id": "HADESANCIENTS-SPLASH",
-            "name": "Splash",
-            "description": "Apply N Rupture on every hit.",
+            "name": "Splashing",
+            "description": "Apply N Riptide on every hit.",
             "v": 2,
             "mod": "Hades Ancients"
         },
@@ -215618,6 +215779,13 @@
             "id": "HADESANCIENTS-INTOXICATE",
             "name": "Intoxicate",
             "description": "Apply N Hangover to ALL enemies.",
+            "v": 2,
+            "mod": "Hades Ancients"
+        },
+        {
+            "id": "HADESANCIENTS-WOUNDING",
+            "name": "Wounding",
+            "description": "Apply Wounds equal to half the damage dealt on every hit.",
             "v": 2,
             "mod": "Hades Ancients"
         },
